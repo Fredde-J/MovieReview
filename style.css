@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+  }
+
+#Form{
+    border-style: solid;
+    border-radius: 20px;
+    text-align: center;
+    display: block;
+    margin-right: 300px;
+    margin-left: 300px;
+    padding: 1cm;
+}
+h1{
+    text-align: center;
+}
