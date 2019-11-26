@@ -1,8 +1,9 @@
 import addMovie from './addMovie.js';
+
 export default{
 
     components:{
-addMovie
+addMovie,
     },
     template:`
     <div>

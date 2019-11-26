@@ -2,13 +2,13 @@
     box-sizing: border-box;
   }
 
-#Form{
+form{
     border-style: solid;
     border-radius: 20px;
     text-align: center;
     display: block;
-    margin-right: 300px;
-    margin-left: 300px;
+    margin-right: 500px;
+    margin-left: 500px;
     padding: 1cm;
 }
 h1{
