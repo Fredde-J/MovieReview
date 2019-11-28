@@ -4,12 +4,12 @@ export default{
         movieCard
             },
     template:`
-   
+   <div>
     <form>  
     Title: <input v-model="movieTitle" type="text" > 
     <br><br>
 
-    Rating: 1<input v-model="movieRating" type="range" min="0" max="5" value="0">5
+    Rating: 0<input v-model="movieRating" type="range" min="0" max="5" value="0">5
     <br><br>
 
     Genre: <select v-model="movieGenre">
@@ -27,14 +27,15 @@ export default{
   <br>
   <textarea v-model="movieText" rows = "8" cols = "30" name = "description"></textarea>
   <br><br>
-  <button>Clear</button>
+  <button @="clearForm">Clear</button>
   <button v-on:click.prevent="addTitle">Add</button>
   <p>movie:</p>
     </form>
+    <movieCard
 
-    <div>
-   <movieCard v-bind:moviecard="movie"></movieCard>
-   </div>
+     v-bind:movie="movie"></movieCard>
+    </div>
+    
   
     `,
     data(){
@@ -43,7 +44,7 @@ export default{
             movieRating:"",
             movieGenre:"",
             movieText:"",
-            movie:""  
+            movie:{}  
         }
     },
     methods:{
@@ -52,10 +53,24 @@ export default{
             console.log(this.movieRating)
             console.log(this.movieGenre)
             console.log(this.movieText)
+            let movie ={
+                title:this.movieTitle,
+                rating:this.movieRating,
+                genre:this.movieGenre,
+                desc:this.movieText,
 
-            return {
-                movie: [this.movieTitle,this.movieRating,this.movieGenre,this.movieText]
+                
             }
-        }    
+            this.movie=movie
+
+        
+        }, 
+        clearForm(){
+            this.movieTitle,
+            this.movieRating,
+            this.movieGenre,
+            this.movieText
+
+        },  
     }
 }
