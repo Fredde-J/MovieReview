@@ -9,7 +9,7 @@ movieList
     },
     template:`
     <div>
-        <h1>Movie rating</h1>
+        <h1>Movie reviewer</h1>
         <addMovie @newMovie="onNewMovie"></addMovie>
         <br>
         <movieList :movies="movies"></movieList>

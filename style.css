@@ -10,7 +10,50 @@ form{
     margin-right: 500px;
     margin-left: 500px;
     padding: 1cm;
+    color: rgb(248, 223, 0);
+    font-family: 'Notable', sans-serif;
 }
 h1{
     text-align: center;
+    font-family: 'Notable', sans-serif;
+    color: rgb(248, 223, 0);
+    font-size: 50px;
+}
+body{
+background-image: url(/images/nobackdrop.jpg);
+background-size: cover;
+
+background-repeat: no-repeat;
+}
+
+button{
+    background-color: rgb(51, 8, 206);
+    font-family: 'Notable', sans-serif;
+    color: rgb(248, 223, 0);
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+select{
+    background-color:  rgb(248, 223, 0);;
+}
+input{
+    background-color:  rgb(248, 223, 0);; 
+}
+#rating{
+    -webkit-appearance: none;
+    appearance: none;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: rgb(0, 0, 0);
+  cursor: pointer;
+}
+textarea{
+    background-color:  rgb(248, 223, 0);;
+}
+     
 }

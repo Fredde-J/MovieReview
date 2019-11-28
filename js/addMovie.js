@@ -3,14 +3,16 @@ export default{
     
     template:`
    <div>
-    <form>  
+    <form> 
+
     Title: <input v-model="movieTitle" type="text" > 
     <br><br>
 
-    Rating: 0<input v-model="movieRating" type="range" min="0" max="5" value="0">5
+    Rating: 0<input id="rating" v-model="movieRating" type="range" min="0" max="5" value="0">5/
+    <span>{{movieRating}}</span>
     <br><br>
 
-    Genre: <select v-model="movieGenre">
+  Genre: <select v-model="movieGenre">
   <option value="Comedi">Comedi</option>
   <option value="Drama">Drama</option>
   <option value="Action">Action</option>
@@ -19,7 +21,6 @@ export default{
   <option value="Science fiction">Science fiction</option>
   </select>
  
-
   <br><br>
   Description:
   <br>
@@ -28,11 +29,9 @@ export default{
   <button @click.prevent="clearForm">Clear</button>
   <button v-on:click.prevent="addTitle">Add</button>
     </form>
-    <br>
-    
+ 
     </div>
     
-  
     `,
     data(){
         return{
@@ -56,7 +55,6 @@ export default{
             this.$emit('newMovie', movie)
 
             this.clearForm()
-
         }, 
         clearForm(){
             this.movieTitle ="",
