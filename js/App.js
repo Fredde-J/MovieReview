@@ -14,7 +14,7 @@ addMovie,
     `,
     data(){
         return{
-            message: "Whats up?"
+            
         }
     }
 }
