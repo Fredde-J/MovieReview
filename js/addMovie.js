@@ -1,8 +1,6 @@
-import movieCard from './movieCard.js';
+import Movie from './Movie.js'
 export default{
-    components:{
-        movieCard
-            },
+    
     template:`
    <div>
     <form>  
@@ -27,13 +25,11 @@ export default{
   <br>
   <textarea v-model="movieText" rows = "8" cols = "30" name = "description"></textarea>
   <br><br>
-  <button @="clearForm">Clear</button>
+  <button @click.prevent="clearForm">Clear</button>
   <button v-on:click.prevent="addTitle">Add</button>
-  <p>movie:</p>
     </form>
-    <movieCard
-
-     v-bind:movie="movie"></movieCard>
+    <br>
+    
     </div>
     
   
@@ -43,33 +39,30 @@ export default{
             movieTitle:"",
             movieRating:"",
             movieGenre:"",
-            movieText:"",
-            movie:{}  
+            movieText:"",  
         }
     },
     methods:{
         addTitle: function(){
-            console.log(this.movieTitle)
-            console.log(this.movieRating)
-            console.log(this.movieGenre)
-            console.log(this.movieText)
-            let movie ={
-                title:this.movieTitle,
-                rating:this.movieRating,
-                genre:this.movieGenre,
-                desc:this.movieText,
+            
+            let movie = new Movie(
+                this.movieTitle,
+                this.movieRating,
+                this.movieGenre,
+                this.movieText,);
 
-                
-            }
-            this.movie=movie
+            console.log(movie)
+            
+            this.$emit('newMovie', movie)
 
-        
+            this.clearForm()
+
         }, 
         clearForm(){
-            this.movieTitle,
-            this.movieRating,
-            this.movieGenre,
-            this.movieText
+            this.movieTitle ="",
+            this.movieRating = "",
+            this.movieGenre = "",
+            this.movieText = ""
 
         },  
     }
